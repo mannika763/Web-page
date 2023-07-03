@@ -1,19 +1,29 @@
 ---
-import HeaderLink from './HeaderLink.astro';
+
 import { SITE_TITLE } from '../consts';
+import '../styles/global.css'
+
 ---
 
 <header>
-	<h2>
-		{SITE_TITLE}
-	</h2>
-	<nav>
-		<HeaderLink href="/">Home</HeaderLink>
-		<HeaderLink href="/blog">Blog</HeaderLink>
-		<HeaderLink href="/about">About</HeaderLink>
-		<HeaderLink href="https://twitter.com/astrodotbuild" target="_blank">Twitter</HeaderLink>
-		<HeaderLink href="https://github.com/withastro/astro" target="_blank">GitHub</HeaderLink>
-	</nav>
+	
+	<nav class="nav">
+		<i class="uil uil-bars navOpenBtn"></i>
+		<a href="#" class="logo">CodingLab</a>
+		<ul class="nav-links">
+		  <i class="uil uil-times navCloseBtn"></i>
+		  <li><a href="/">Home</a></li>
+		  <li><a href="/about">About Us</a></li>
+		  <!-- <li><a href="/">Products</a></li> -->
+		  <li><a href="/services">Services</a></li>
+		  <li><a href="/contact">Contact Us</a></li>
+		</ul>
+		<i class="uil uil-search search-icon" id="searchIcon"></i>
+		<div class="search-box">
+		  <i class="uil uil-search search-icon"></i>
+		  <input type="text" placeholder="Search here..." />
+		</div>
+	  </nav>
 </header>
 <style>
 	header {

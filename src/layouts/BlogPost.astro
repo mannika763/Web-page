@@ -1,18 +1,19 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import FormattedDate from '../components/FormattedDate.astro';
+import type { CollectionEntry } from "astro:content";
 
-type Props = CollectionEntry<'blog'>['data'];
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Cards from "../components/Cards.astro";
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+
+// type Props = CollectionEntry<"blog">["data"];
+
+// const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
 <html lang="en">
 	<head>
-		<BaseHead title={title} description={description} />
+		<!-- <BaseHead title={title} description={description} /> -->
 		<style>
 			.title {
 				font-size: 2em;
@@ -32,20 +33,22 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		<Header />
 		<main>
 			<article>
-				{heroImage && <img width={720} height={360} src={heroImage} alt="" />}
-				<h1 class="title">{title}</h1>
-				<FormattedDate date={pubDate} />
-				{
-					updatedDate && (
-						<div class="last-updated-on">
-							Last updated on <FormattedDate date={updatedDate} />
-						</div>
-					)
-				}
-				<hr />
-				<slot />
+				<div class="imagess">
+					<div class="main-container">
+						<div class="nine"><h1>FinEdge: Revolutionizing Cross-Border Payments with Astro-Infused Innovation!</h1><span>
+							FinEdge is a cutting-edge fintech startup focused on transforming cross-border payments. They believe in a world where geographic boundaries should not limit individuals and businesses from making seamless transactions.</span></div>
+					</div>
+					<div class="image-container" ></div>
+				</div>
 			</article>
+				
+				<slot />
+			
 		</main>
+		<Cards/>
 		<Footer />
+		<script>
+			import "../scripts/menu.js";
+		</script>
 	</body>
 </html>
